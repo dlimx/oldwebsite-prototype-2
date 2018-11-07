@@ -8,8 +8,10 @@
   "license": "SEE LICENSE IN README.md",
   "scripts": {
     "start": "NODE_ENV=production node server.js ",
+    "precommit": "lint-staged",
     "dev": "nodemon server.js",
-    "dev:client": "webpack-dev-server --config ./scripts/webpack.dev.js --mode development --open",
+    "dev:client":
+      "webpack-dev-server --config ./scripts/webpack.dev.js --mode development --open",
     "build": "webpack --config ./scripts/webpack.prod.js --mode production"
   },
   "dependencies": {
@@ -28,15 +30,26 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "~8.2.1",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.1",
+    "eslint": "~4.16.0",
+    "eslint-config-airbnb": "~16.1.0",
+    "eslint-plugin-import": "~2.8.0",
+    "eslint-plugin-jest": "^21.25.1",
+    "eslint-plugin-jsx-a11y": "~6.0.3",
+    "eslint-plugin-prettier": "~2.3.1",
+    "eslint-plugin-react": "~7.5.1",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "~0.14.3",
+    "lint-staged": "~5.0.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "nodemon": "^1.18.6",
+    "prettier": "~1.8.2",
     "react-hot-loader": "^4.3.12",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -44,5 +57,13 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
+  },
+  "lint-staged": {
+    "*.{js,json,css}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

@@ -14,7 +14,7 @@ const server = express();
 
 function requireHTTPS(req, res, next) {
   if (req.headers['x-forwarded-proto'] !== 'https') {
-    return res.redirect(301, 'https://' + req.get('host') + req.url);
+    return res.redirect(301, `https://${req.get('host')}${req.url}`);
   }
   next();
 }
@@ -23,7 +23,7 @@ function requireHTTPS(req, res, next) {
 server.use(morgan('combined'));
 server.use(
   '/',
-  express.static(path.join(__dirname, 'public'), { maxAge: 86400000 })
+  express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }),
 );
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
@@ -36,5 +36,5 @@ if (IS_PRODUCTION) {
   server.use(compression());
 }
 
-console.log('Server hosted on port ' + PORT);
+console.log(`Server hosted on port ${PORT}`);
 server.listen(PORT);
