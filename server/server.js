@@ -5,9 +5,11 @@ const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+// server routes
+const routes = require('./routes/index');
+
 // server variables
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
-const PORT = process.env.PORT || 5000;
 
 // express server
 const server = express();
@@ -20,14 +22,20 @@ function requireHTTPS(req, res, next) {
 }
 
 // add middleware
-server.use(morgan('combined'));
+server.use(morgan(IS_PRODUCTION ? 'combined' : 'dev'));
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(cors());
+
+// add routes
+server.use('/api', routes);
 server.use(
   '/',
-  express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }),
+  express.static(path.join(__dirname, '..', 'public'), { maxAge: 86400000 }),
 );
-server.use(bodyParser.urlencoded({ extended: false }));
-server.use(bodyParser.json());
-server.use(cors());
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+});
 
 // production only environment
 if (IS_PRODUCTION) {
@@ -35,5 +43,4 @@ if (IS_PRODUCTION) {
   server.use(compression());
 }
 
-console.log(`Server hosted on port ${PORT}`);
-server.listen(PORT);
+module.exports = server;

@@ -16,4 +16,6 @@ class App extends React.Component {
 
 render(<App />, document.getElementById('app'));
 
-module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
+}

@@ -2,14 +2,15 @@
   "name": "davidli",
   "version": "0.1.0",
   "description": "My online home",
-  "main": "server.js",
+  "main": "index.js",
   "repository": "https://github.com/dlimx/davidli",
   "author": "dlimx",
   "license": "SEE LICENSE IN README.md",
   "scripts": {
-    "start": "NODE_ENV=production node server.js ",
-    "dev": "nodemon --inspect server.js",
-    "dev:client": "webpack-dev-server --config ./scripts/webpack.dev.js --mode development --open",
+    "start": "NODE_ENV=production node index.js ",
+    "dev": "nodemon --inspect=9092 index.js",
+    "dev:server": "nodemon --inspect-brk=9092 index.js",
+    "dev:client": "webpack-dev-server --config ./scripts/webpack.dev.js --mode development --color --open",
     "build": "webpack --config ./scripts/webpack.prod.js --mode production"
   },
   "dependencies": {
