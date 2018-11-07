@@ -1,0 +1,9 @@
+{
+  "name": "davidli",
+  "version": "0.1.0",
+  "description": "My online home",
+  "main": "index.js",
+  "repository": "https://github.com/dlimx/davidli",
+  "author": "dlimx",
+  "license": "No license"
+}
