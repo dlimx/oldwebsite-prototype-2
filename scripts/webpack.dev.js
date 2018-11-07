@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -22,10 +23,17 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'David Li DEVELOPMENT',
+      template: path.join(__dirname, '..', 'public', 'index.html'),
+      filename: 'index.html',
+    }),
+  ],
   devServer: {
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'client/assets'),
+    contentBase: path.join(__dirname, '..', 'public'),
     hot: true,
     port: 9090,
     proxy: {
