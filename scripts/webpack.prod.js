@@ -1,15 +1,18 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
+const webpack = require('webpack');
+const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    filename: '[name].js'
+    filename: '[name].[contenthash].js'
   },
   module: {
     rules: [
@@ -35,16 +38,31 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['public'], {
+      root: path.join(__dirname, '..')
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name].css',
+      filename: '[name].[contenthash].css',
       chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
       filename: 'index.html',
       hash: true
-    })
-  ]
+    }),
+    new webpack.HashedModuleIdsPlugin()
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
 });
