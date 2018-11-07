@@ -1,6 +1,16 @@
-const helloWorld = 'helloWorld!';
+import React from 'react';
+import { render } from 'react-dom';
 
-console.log('my first test');
+import styles from './style.css';
 
-export default helloWorld;
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello World!</h1>
+      </div>
+    );
+  }
+}
 
+render(<App />, document.getElementById('app'));

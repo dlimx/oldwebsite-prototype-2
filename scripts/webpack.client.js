@@ -5,17 +5,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: ['./client/index.js'],
-
   output: {
     path: path.join(__dirname, '..', 'public'),
     publicPath: '/',
     filename: 'bundle.js'
   },
-
   resolve: {
     extensions: ['.js', '.jsx']
   },
-
   module: {
     rules: [
       {
@@ -23,7 +20,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader']
       },
-
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: {
@@ -34,9 +30,8 @@ module.exports = {
           }
         }
       },
-
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -54,17 +49,16 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.(otf|ttf|eot|woff|woff2)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'public/fonts/[name].[ext]',
-          outputPath: 'dist/fonts'
-        }
-      }
+      // {
+      //   test: /\.(otf|ttf|eot|woff|woff2)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     name: 'public/fonts/[name].[ext]',
+      //     outputPath: 'dist/fonts'
+      //   }
+      // }
     ]
   },
-
   plugins: [
     new ExtractTextPlugin({ filename: 'style.css' }),
     new HtmlWebpackPlugin({
@@ -73,7 +67,6 @@ module.exports = {
       hash: true
     })
   ],
-
   devServer: {
     historyApiFallback: true,
     publicPath: '/',

@@ -36,11 +36,5 @@ if (IS_PRODUCTION) {
   server.use(compression());
 }
 
-server.use((req, res) => {
-  res.json({
-    message: 'Hello, world!',
-  })
-})
-
 console.log('Server hosted on port ' + PORT);
 server.listen(PORT);
