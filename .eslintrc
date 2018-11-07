@@ -12,6 +12,7 @@
   },
   "plugins": ["prettier", "jest"],
   "rules": {
+    "consistent-return": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
