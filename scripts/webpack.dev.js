@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -24,8 +25,11 @@ module.exports = merge(common, {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     historyApiFallback: true,
-    publicPath: '/',
-    contentBase: './public',
+    contentBase: path.join(__dirname, 'client/assets'),
     hot: true,
+    port: 9090,
+    proxy: {
+      '/api': 'http://localhost:9092',
+    },
   },
 });

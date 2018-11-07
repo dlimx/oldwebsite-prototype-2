@@ -31,10 +31,10 @@ server.use(cors());
 server.use('/api', routes);
 server.use(
   '/',
-  express.static(path.join(__dirname, '..', 'public'), { maxAge: 86400000 }),
+  express.static(path.join(__dirname, '..', 'dist'), { maxAge: 86400000 }),
 );
 server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'));
 });
 
 // production only environment

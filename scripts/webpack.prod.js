@@ -38,7 +38,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(['public'], {
+    new CleanWebpackPlugin(['dist'], {
       root: path.join(__dirname, '..'),
     }),
     new MiniCssExtractPlugin({
@@ -48,7 +48,7 @@ module.exports = merge(common, {
       chunkFilename: '[id].css',
     }),
     new HtmlWebpackPlugin({
-      template: './client/index.html',
+      template: path.join(__dirname, '..', 'public', 'index.html'),
       filename: 'index.html',
       hash: true,
     }),
