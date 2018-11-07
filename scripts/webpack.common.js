@@ -7,14 +7,14 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -22,9 +22,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: 'public/img/[name].[ext]',
-            outputPath: 'dist/img/'
-          }
-        }
+            outputPath: 'dist/img/',
+          },
+        },
       },
       // {
       //   test: /\.(otf|ttf|eot|woff|woff2)$/,
@@ -34,6 +34,6 @@ module.exports = {
       //     outputPath: 'dist/fonts'
       //   }
       // }
-    ]
+    ],
   },
 };

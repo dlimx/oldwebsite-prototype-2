@@ -10,8 +10,15 @@
     "window": false,
     "document": false
   },
-  "plugins": [
-    "prettier",
-    "jest"
-  ]
+  "plugins": ["prettier", "jest"],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": true
+      }
+    ]
+  }
 }

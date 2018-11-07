@@ -12,7 +12,7 @@ module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
   },
   module: {
     rules: [
@@ -21,38 +21,38 @@ module.exports = merge(common, {
         use: {
           loader: 'html-loader',
           options: {
-            minimize: true
-          }
-        }
+            minimize: true,
+          },
+        },
       },
       {
         test: /\.(css|scss)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-          'sass-loader'
-        ]
-      }
-    ]
+          'sass-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(['public'], {
-      root: path.join(__dirname, '..')
+      root: path.join(__dirname, '..'),
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
       filename: '[name].[contenthash].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
     new HtmlWebpackPlugin({
       template: './client/index.html',
       filename: 'index.html',
-      hash: true
+      hash: true,
     }),
-    new webpack.HashedModuleIdsPlugin()
+    new webpack.HashedModuleIdsPlugin(),
   ],
   optimization: {
     splitChunks: {
@@ -60,9 +60,9 @@ module.exports = merge(common, {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  }
+          chunks: 'all',
+        },
+      },
+    },
+  },
 });
