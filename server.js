@@ -31,7 +31,6 @@ server.use(cors());
 
 // production only environment
 if (IS_PRODUCTION) {
-  console.log(process.env);
   server.use(requireHTTPS);
   server.use(compression());
 }
