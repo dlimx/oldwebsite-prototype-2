@@ -19,7 +19,12 @@ module.exports = merge(common, {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader', 'css-loader?modules', 'sass-loader'],
+        use: [
+          'style-loader',
+          'css-loader?modules',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
