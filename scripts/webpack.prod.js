@@ -26,7 +26,20 @@ module.exports = merge(common, {
         },
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|scss|sass)$/,
+        include: path.join(__dirname, '..', 'client', 'theme'),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(css|scss|sass)$/,
+        exclude: path.join(__dirname, '..', 'client', 'theme'),
         use: [
           {
             loader: MiniCssExtractPlugin.loader,

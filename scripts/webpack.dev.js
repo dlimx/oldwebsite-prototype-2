@@ -18,7 +18,13 @@ module.exports = merge(common, {
         use: ['html-loader'],
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(css|scss|sass)$/,
+        include: path.join(__dirname, '..', 'client', 'theme'),
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(css|scss|sass)$/,
+        exclude: path.join(__dirname, '..', 'client', 'theme'),
         use: [
           'style-loader',
           'css-loader?modules',
