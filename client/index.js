@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 
 import Router from './scenes/Router';
 
+import './theme/reset.css';
 import './theme/base.scss';
 import './theme/theme.scss';
 

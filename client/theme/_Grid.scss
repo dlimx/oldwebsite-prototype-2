@@ -184,12 +184,12 @@
 
 	.row {
 		flex-direction: row;
-		margin-left: -1.0rem;
+		// margin-left: -1.0rem;
 		width: calc(100% + 2.0rem);
 
 		.column {
 			margin-bottom: inherit;
-			padding: 0 1.0rem;
+			// padding: 0 1.0rem;
 		}
 	}
 }

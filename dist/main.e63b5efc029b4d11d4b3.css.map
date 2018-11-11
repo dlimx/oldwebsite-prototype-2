@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./client/styles.css"],"names":[],"mappings":"AAAA;AACA,aAAa;;AAEb;AACA,eAAe;;AAEf;AACA,cAAc","file":"main.e63b5efc029b4d11d4b3.css","sourcesContent":["h1 {\n  color: red; }\n\n.hello {\n  color: green; }\n\n._3aF81SbpFUlIQZOwwGsWbU {\n  color: blue; }\n"],"sourceRoot":""}
