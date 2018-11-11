@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import data from '../../../public/blog.json';
+
 import styles from './styles.scss';
 
 export default class Stories extends Component {
@@ -18,7 +20,12 @@ export default class Stories extends Component {
         </div>
         <div className="column">
           <h3>David Li</h3>
-          <h3 />
+          {data.posts.map(item => (
+            <div
+              key={item.date}
+              dangerouslySetInnerHTML={{ __html: item.content }}
+            />
+          ))}
         </div>
       </div>
     );
