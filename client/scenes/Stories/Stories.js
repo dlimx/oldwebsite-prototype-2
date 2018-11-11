@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import data from '../../../public/blog.json';
 
 import styles from './styles.scss';
+import StoryPostCard from '../../components/StoryPostCard';
+
+console.log(data);
 
 export default class Stories extends Component {
   render() {
@@ -16,15 +19,13 @@ export default class Stories extends Component {
               height: window.innerHeight,
               width: '100%',
             }}
+            alt="David Li's Profile"
           />
         </div>
         <div className="column">
-          <h3>David Li</h3>
+          <h1>David Li</h1>
           {data.posts.map(item => (
-            <div
-              key={item.date}
-              dangerouslySetInnerHTML={{ __html: item.content }}
-            />
+            <StoryPostCard key={item.data.date} {...item} />
           ))}
         </div>
       </div>

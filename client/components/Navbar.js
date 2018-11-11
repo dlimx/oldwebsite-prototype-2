@@ -11,7 +11,7 @@ export default class Navbar extends Component {
         <Link to="/">
           <h1 className={styles.title}>David Li</h1>
         </Link>
-        <Link className={styles.link} to="/">
+        <Link className={styles.link} to="/about">
           About
         </Link>
         <Link className={styles.link} to="/stories">
