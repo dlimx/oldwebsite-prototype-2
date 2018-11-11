@@ -3,7 +3,7 @@
 // Sass Modules
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@import 'Color';
+@import 'Colors';
 @import 'Blockquote';
 @import 'Button';
 @import 'Code';
@@ -17,11 +17,7 @@
 @import 'Typography';
 @import 'Image';
 @import 'Utility';
-
-// Base
-// ––––––––––––––––––––––––––––––––––––––––––––––––––
-@import 'Color';
-
+@import 'Variables';
 
 // Set box-sizing globally to handle padding and border widths
 *,

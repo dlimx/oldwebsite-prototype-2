@@ -17,8 +17,8 @@ export default class StoryPost extends Component {
 
     return (
       <div>
-        <h3>{data.title}</h3>
-        <p>{data.date}</p>
+        <h1 className={styles.title}>{data.title}</h1>
+        <p className={styles.date}>{data.date}</p>
         <p dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     );

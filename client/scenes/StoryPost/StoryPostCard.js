@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './StoryPostCardStyles.scss';
+import styles from './styles.scss';
 
 export default class StoryPostCard extends Component {
   static propTypes = {
@@ -15,11 +15,14 @@ export default class StoryPostCard extends Component {
   render() {
     const { data, content } = this.props;
 
+    const truncatedContent = content.split('<hr>')[0];
+
     return (
       <div>
-        <h3>{data.title}</h3>
-        <p>{data.date}</p>
-        <p dangerouslySetInnerHTML={{ __html: content }} />
+        <h3 className={styles.title}>{data.title}</h3>
+        <p className={styles.date}>{data.date}</p>
+        <p className={styles.blurb}>{data.blurb}</p>
+        <p dangerouslySetInnerHTML={{ __html: truncatedContent }} />
       </div>
     );
   }

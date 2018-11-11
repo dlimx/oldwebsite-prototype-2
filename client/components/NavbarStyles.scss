@@ -1,13 +1,15 @@
+@import 'Variables';
+
 .navbar {
-  padding: 16px;
+  padding: $padding;
 }
 
 .title {
-  font-size: 40px;
+  font-size: 3rem;
 }
 
 .link {
-  font-size: 16px;
+  font-size: $padding;
   display: flex;
-  margin: 16px 0px;
+  margin: $padding 0px;
 }

@@ -29,7 +29,12 @@ module.exports = merge(common, {
           'style-loader',
           'css-loader?modules',
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [path.join(__dirname, '..', 'client', 'theme')],
+            },
+          },
         ],
       },
     ],
