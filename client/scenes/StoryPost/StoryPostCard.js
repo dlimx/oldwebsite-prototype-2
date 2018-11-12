@@ -15,14 +15,15 @@ export default class StoryPostCard extends Component {
   render() {
     const { data, content } = this.props;
 
-    const truncatedContent = content.split('<hr>')[0];
+    const contentArray = content.replace(/<p>/gi, '').split('</p>');
 
     return (
       <div>
         <h3 className={styles.title}>{data.title}</h3>
         <p className={styles.date}>{data.date}</p>
         <p className={styles.blurb}>{data.blurb}</p>
-        <p dangerouslySetInnerHTML={{ __html: truncatedContent }} />
+        <p>{contentArray[0]}</p>
+        {contentArray[1] && <p>{contentArray[1]}</p>}
       </div>
     );
   }

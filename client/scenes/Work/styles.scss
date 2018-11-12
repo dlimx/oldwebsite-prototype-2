@@ -1,0 +1,8 @@
+@import 'Variables';
+
+.container {
+  padding: $padding-double;
+  @media  (min-width: 40rem) {
+    padding-top: calc(#{$headerHeight} + #{$padding-double});
+  }
+}

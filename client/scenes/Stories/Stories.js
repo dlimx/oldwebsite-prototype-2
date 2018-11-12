@@ -5,16 +5,15 @@ import data from '../../../public/blog.json';
 
 import styles from './styles.scss';
 import StoryPostCard from '../StoryPost/StoryPostCard';
+import StaticImage from '../../components/StaticImage';
 
 export default class Stories extends Component {
   render() {
     return (
       <div className="row">
-        <div className={classNames('column', styles.imageContainer)}>
-          <div className={styles.image} alt="David Li's Profile" />
-        </div>
-        <div className={classNames('column', styles.storyContainer)}>
-          <h1>David Li</h1>
+        <StaticImage />
+        <div className={classNames('column', styles.container)}>
+          <h1>Stories</h1>
           {data.posts.map(item => (
             <StoryPostCard key={item.data.date} {...item} />
           ))}
