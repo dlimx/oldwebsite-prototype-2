@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 import styles from './NavbarStyles.scss';
 
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className={classNames('row', styles.navbar)}>
-        <Link to="/">
-          <h1 className={styles.title}>David Li</h1>
-        </Link>
-        <Link className={styles.link} to="/about">
-          About
-        </Link>
-        <Link className={styles.link} to="/stories">
-          Stories
-        </Link>
-        <Link className={styles.link} to="/work">
-          Work
-        </Link>
+      <nav className={styles.navbar}>
+        <NavLink
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/about"
+        >
+          about
+        </NavLink>
+        <NavLink
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/stories"
+        >
+          stories
+        </NavLink>
+        <NavLink
+          className={styles.link}
+          activeClassName={styles.linkActive}
+          to="/work"
+        >
+          work
+        </NavLink>
       </nav>
     );
   }

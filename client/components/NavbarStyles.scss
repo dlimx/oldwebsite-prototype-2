@@ -1,15 +1,32 @@
 @import 'Variables';
+@import 'Grid';
+@import 'zIndex';
+@import 'Colors';
+
+$background: #ffffff;
 
 .navbar {
-  padding: $padding;
-}
-
-.title {
-  font-size: 3rem;
+  @extend .row;
+  padding: 0 $padding;
+  height: $headerHeight;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60%;
+  z-index: $navbarIndex;
+  background-color: $background;
 }
 
 .link {
-  font-size: $padding;
-  display: flex;
-  margin: $padding 0px;
+  font-size: 1.6rem;
+  margin: 0 $padding-half;
+  line-height: 2.4rem;
+  padding-top: 2px;
+  border-bottom: 2px solid $background;
+}
+
+.linkActive {
+  border-bottom: 2px solid $color-primary;
 }
