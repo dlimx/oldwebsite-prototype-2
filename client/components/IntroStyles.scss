@@ -1,0 +1,32 @@
+@import 'Colors';
+@import 'Variables';
+
+
+.container {
+  display: flex;
+  @media  (max-width: 40rem) {
+    height: 20vh;
+    width: 100%;
+  }
+}
+
+.fixedContainer {
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+
+  @media  (max-width: 40rem) {
+    height: 20vh;
+    width: 100%;
+  }
+}
+
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: calc(#{$headerHeight} + #{$padding});
+}
+
+.title {
+  color: $color-text;
+}

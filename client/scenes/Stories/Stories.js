@@ -5,13 +5,13 @@ import data from '../../../public/blog.json';
 
 import styles from './styles.scss';
 import StoryPostCard from '../StoryPost/StoryPostCard';
-import StaticImage from '../../components/StaticImage';
+import Intro from '../../components/Intro';
 
 export default class Stories extends Component {
   render() {
     return (
       <div className="row">
-        <StaticImage />
+        <Intro />
         <div className={classNames('column', styles.container)}>
           <h1>Stories</h1>
           {data.posts.map(item => (
