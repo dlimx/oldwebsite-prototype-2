@@ -12,10 +12,9 @@ export default class Stories extends Component {
     return (
       <div className="row">
         <Intro />
-        <div className={classNames('column', styles.container)}>
-          <h1>Stories</h1>
-          {data.posts.map(item => (
-            <StoryPostCard key={item.data.date} {...item} />
+        <div className={classNames('column', 'column-60', styles.container)}>
+          {data.posts.map((item, index) => (
+            <StoryPostCard index={index} key={item.data.date} {...item} />
           ))}
         </div>
       </div>

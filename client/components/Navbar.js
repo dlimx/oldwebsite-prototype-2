@@ -17,7 +17,7 @@ export default class Navbar extends Component {
         <NavLink
           className={styles.link}
           activeClassName={styles.linkActive}
-          to="/stories"
+          to="/"
         >
           stories
         </NavLink>

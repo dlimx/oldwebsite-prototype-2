@@ -14,7 +14,6 @@ export default class Router extends Component {
           <Navbar />
           <Route path="/" exact component={Stories} />
           <Route path="/about" component={About} />
-          <Route path="/stories" component={Stories} />
           <Route path="/work" component={Work} />
         </div>
       </BrowserRouter>

@@ -5,7 +5,6 @@ import Router from './scenes/Router';
 
 import './theme/reset.css';
 import './theme/base.scss';
-import './theme/theme.scss';
 
 class App extends React.Component {
   render() {

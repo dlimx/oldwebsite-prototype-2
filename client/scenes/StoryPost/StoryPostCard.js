@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
+
 import styles from './styles.scss';
 
 export default class StoryPostCard extends Component {
@@ -9,21 +11,22 @@ export default class StoryPostCard extends Component {
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     }).isRequired,
-    content: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
   };
 
   render() {
-    const { data, content } = this.props;
-
-    const contentArray = content.replace(/<p>/gi, '').split('</p>');
+    const { data, index } = this.props;
 
     return (
-      <div>
-        <h3 className={styles.title}>{data.title}</h3>
-        <p className={styles.date}>{data.date}</p>
-        <p className={styles.blurb}>{data.blurb}</p>
-        <p>{contentArray[0]}</p>
-        {contentArray[1] && <p>{contentArray[1]}</p>}
+      <div className={classNames(styles.card, `color-${(index % 5) + 1}`)}>
+        <div>
+          <p className={styles.text}>{index}</p>
+          <p className={styles.date}>{data.date}</p>
+        </div>
+        <div>
+          <p className={styles.blurb}>{data.blurb}</p>
+          <h3 className={styles.title}>{data.title}</h3>
+        </div>
       </div>
     );
   }

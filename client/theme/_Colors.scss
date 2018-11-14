@@ -7,7 +7,7 @@ $color-text-100: #c6c6c6;
 $color-text-300: #a9a9a9;
 $color-text-500: #636363;
 $color-text-700: #464646;
-$color-text-700: #242424;
+$color-text-900: #242424;
 $color-text-light: #fff;
 $color-text-0: $color-text-light;
 
@@ -18,24 +18,45 @@ $color-primary-500: $color-primary;
 $color-primary-700: #206194;
 $color-primary-900: #0e2a40;
 
-$color-secondary: #ed5967;
+$color-secondary: #ea3546;
 $color-secondary-100: #f9c7cc;
 $color-secondary-300: #f3909a;
 $color-secondary-500: $color-secondary;
-$color-secondary-700: #d53140;
+$color-secondary-700: #c02c3a;
 $color-secondary-900: #95222d;
 
 $color-tertiary: #0a2342;
 $color-tertiary-300: #364b64;
 $color-tertiary-500: $color-tertiary;
-$color-tertiary-700: #07172a;
+$color-tertiary-700: #081a31;
 
 $color-quaternary: #68e9c8;
 $color-quaternary-300: #baf5e6;
 $color-quaternary-500: $color-quaternary;
-$color-quaternary-700: #56bfa4;
+$color-quaternary-700: #4caa92;
+$color-quaternary-900: #306a5b;
 
 $color-quinary: #f9cd04;
 $color-quinary-300: #fce88c;
 $color-quinary-500: $color-quinary;
 $color-quinary-700: #cca804;
+
+.color-1 {
+  background-color: $color-primary-500;
+}
+
+.color-2 {
+  background-color: $color-secondary-500;
+}
+
+.color-3 {
+  background-color: $color-tertiary-500;
+}
+
+.color-4 {
+  background-color: $color-quaternary-700;
+}
+
+.color-5 {
+  background-color: $color-quinary-500;
+}

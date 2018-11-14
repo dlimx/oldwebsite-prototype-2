@@ -1,5 +1,28 @@
 @import 'Colors' ;
+@import 'Variables' ;
+
+.card {
+  min-height: 70vh;
+  padding: $padding-5 $padding-5 $padding-3 $padding-5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .title {
-  color: $color-secondary;
+  color: $color-text-light;
+}
+.titleContainer {
+}
+
+.date {
+  color: $color-text-light;
+}
+
+.blurb {
+  color: $color-text-light;
+}
+
+.text {
+  color: $color-text-light;
 }
