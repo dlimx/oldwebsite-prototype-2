@@ -42,21 +42,36 @@ $color-quinary-500: $color-quinary;
 $color-quinary-700: #cca804;
 
 .color-1 {
-  background-color: $color-primary-500;
+  background-color: $color-primary-700;
+  &:hover {
+    background-color: $color-primary-500;
+  }
 }
 
 .color-2 {
-  background-color: $color-secondary-500;
+  background-color: $color-secondary-700;
+  &:hover {
+    background-color: $color-secondary-500;
+  }
 }
 
 .color-3 {
-  background-color: $color-tertiary-500;
+  background-color: $color-tertiary-700;
+  &:hover {
+    background-color: $color-tertiary-300;
+  }
 }
 
 .color-4 {
   background-color: $color-quaternary-700;
+  &:hover {
+    background-color: $color-quaternary-500;
+  }
 }
 
 .color-5 {
-  background-color: $color-quinary-500;
+  background-color: $color-quinary-700;
+  &:hover {
+    background-color: $color-quinary-500;
+  }
 }

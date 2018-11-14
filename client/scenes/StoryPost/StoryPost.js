@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { format } from 'date-fns';
+
 import styles from './styles.scss';
 
 export default class StoryPost extends Component {
@@ -10,15 +12,17 @@ export default class StoryPost extends Component {
       date: PropTypes.string.isRequired,
     }).isRequired,
     content: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
   };
 
   render() {
-    const { data, content } = this.props;
+    const { data, content, index } = this.props;
 
     return (
       <div>
         <h1 className={styles.title}>{data.title}</h1>
-        <p className={styles.date}>{data.date}</p>
+        <p className={styles.text}>{String((index + 1) / 1000).slice(1)}</p>
+        <p className={styles.date}>{format(data.date, 'MMMM DD, YYYY')}</p>
         <p dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     );
