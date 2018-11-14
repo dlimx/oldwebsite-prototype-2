@@ -27,7 +27,13 @@ module.exports = merge(common, {
         exclude: path.join(__dirname, '..', 'client', 'theme'),
         use: [
           'style-loader',
-          'css-loader?modules',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[path]_[hash:base64:5]',
+            },
+          },
           'postcss-loader',
           {
             loader: 'sass-loader',

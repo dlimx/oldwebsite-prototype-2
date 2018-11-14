@@ -49,9 +49,20 @@ module.exports = merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
           },
-          'css-loader?modules',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[hash:base64:5]',
+            },
+          },
           'postcss-loader',
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [path.join(__dirname, '..', 'client', 'theme')],
+            },
+          },
         ],
       },
     ],
