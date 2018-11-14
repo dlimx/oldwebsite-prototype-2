@@ -7,16 +7,21 @@
   @extend .row;
   padding: 0 $padding-2;
   height: $headerHeight;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   position: fixed;
-  bottom: -$headerHeight;
-  left: 0;
-  width: 100vh;
   z-index: $navbarIndex;
   background-color: $color-background;
-  transform: rotate(270deg);
-  transform-origin: 0px 0px;
+  width: 100vw;
+  left: 0;
+  @media (min-width: 40rem) {
+    transform: rotate(270deg);
+    transform-origin: 0px 0px;
+    bottom: -$headerHeight;
+    left: 0;
+    width: 100vh;
+  }
 }
 
 .link {
