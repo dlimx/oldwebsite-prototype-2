@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { format } from 'date-fns';
 
-import styles from './styles.scss';
+import styles from './StoryPostStyles.scss';
 
 export default class StoryPostCard extends Component {
   static propTypes = {
@@ -13,19 +13,22 @@ export default class StoryPostCard extends Component {
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     }).isRequired,
-    index: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
+    goBack: PropTypes.bool.isRequired,
   };
 
   render() {
-    const { data, index } = this.props;
+    const { data, id, goBack } = this.props;
+
+    const color = `color-${((id - 1) % 5) + 1}`;
 
     return (
       <Link
-        to={`/stories:index${index}`}
-        className={classNames(styles.card, `color-${(index % 5) + 1}`)}
+        to={goBack ? '/stories' : `/stories/${id}`}
+        className={classNames(styles.card, color)}
       >
         <div>
-          <p className={styles.text}>{String((index + 1) / 1000).slice(1)}</p>
+          <p className={styles.text}>{String(id / 1000).slice(1)}</p>
           <p className={styles.date}>{format(data.date, 'MMMM DD, YYYY')}</p>
         </div>
         <div>

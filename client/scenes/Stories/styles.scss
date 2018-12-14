@@ -1,5 +1,19 @@
 @import 'Variables';
+@import 'Grid';
 
-.container {
+.listContainer {
   width: 60vw;
+}
+
+.scene {
+  display: flex;
+  flex-direction: row;
+}
+
+.mainContainer {
+  width: 80vw;
+}
+
+.detailsActive {
+  transform: translateX((-50vw));
 }

@@ -16,7 +16,12 @@ glob('./data/blog/*.md', (error, files) => {
     (a, b) => new Date(b.data.date) - new Date(a.data.date),
   );
 
-  const saveData = sortedArray.map(file => JSON.stringify(file)).join(',');
+  const saveData = sortedArray
+    .map((file, index) => {
+      const newFile = { ...file, id: index + 1 };
+      return JSON.stringify(newFile);
+    })
+    .join(',');
 
   fs.writeFileSync('public/blog.json', `{"posts":[${saveData}]}`);
 });

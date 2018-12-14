@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { format } from 'date-fns';
 
-import styles from './styles.scss';
+import styles from './StoryPostStyles.scss';
 
 export default class StoryPost extends Component {
   static propTypes = {
@@ -17,6 +17,7 @@ export default class StoryPost extends Component {
 
   render() {
     const { data, content, index } = this.props;
+    if (!data) return <h1>asdasdasdasd</h1>;
 
     return (
       <div>
