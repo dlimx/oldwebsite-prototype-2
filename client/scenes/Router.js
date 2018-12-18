@@ -15,13 +15,9 @@ export default class Router extends Component {
         <div>
           <Navbar />
           <Switch>
-            <Route
-              path="/"
-              exact
-              component={() => <Redirect to="/stories" />}
-            />
-            <Route path="/stories" component={Stories} />
-            <Route path="/stories/:id" component={StoryPost} />
+            <Route path="/" exact component={() => <Redirect to="/about" />} />
+            {/* <Route path="/stories" component={Stories} />
+            <Route path="/stories/:id" component={StoryPost} /> */}
             <Route path="/about" component={About} />
             <Route path="/work" component={Work} />
             <Route component={NoRoute} />

@@ -14,14 +14,14 @@ export default class Navbar extends Component {
         >
           about
         </NavLink>
-        <NavLink
+        {/* <NavLink
           className={styles.link}
           activeClassName={styles.linkActive}
           to="/"
           exact
         >
           stories
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className={styles.link}
           activeClassName={styles.linkActive}
