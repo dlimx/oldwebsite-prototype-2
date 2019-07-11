@@ -39,7 +39,7 @@
     "babel-loader": "~8.0.4",
     "clean-webpack-plugin": "~0.1.19",
     "css-loader": "~1.0.1",
-    "eslint": "~4.16.0",
+    "eslint": "~4.18.2",
     "eslint-config-airbnb": "~16.1.0",
     "eslint-plugin-import": "~2.8.0",
     "eslint-plugin-jest": "~21.25.1",
